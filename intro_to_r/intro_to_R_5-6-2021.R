@@ -129,9 +129,11 @@ filtering<-my_data_frame[my_data_frame$id<=3,]
 
 ################################################
 #
-# 8. Aggregate Funcitons: ---- 
+# 8. Aggregate Functions: ---- 
 #
 ############################################### 
+
+unique(search_ad_data$platform_id)
 
 table(search_ad_data$platform_id)# Count table with one variable
 
@@ -142,6 +144,10 @@ table(search_ad_data$date,
       search_ad_data$platform_id)# Count table with three variables
 
 ave_cost_per_day<-aggregate(cost~date, search_ad_data, FUN=mean)# Aggregate 
+
+med_impressions_per_day<-aggregate(impressions~date, search_ad_data, FUN=median)
+
+
 
 ################################################
 #
